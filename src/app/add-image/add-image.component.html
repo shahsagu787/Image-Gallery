@@ -1,0 +1,66 @@
+<form  [formGroup]="entryGroup" (ngSubmit)="onSubmit($event)" [hidden]="!showForm" >
+    
+    
+   <mat-form-field appearance="fill">
+        <mat-label>User Name</mat-label>
+        <input matInput [formControl] = "userNameCtrl">
+        <mat-error *ngIf="userNameCtrl.hasError('required')">User Name is required</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [formControl] = "passwordCtrl">
+        <mat-error *ngIf="passwordCtrl.hasError('required')">password is required</mat-error>
+    </mat-form-field>
+    <div>
+
+        <button mat-raised-button color="primary" >Log In</button> 
+        &nbsp;
+        <button mat-raised-button color="light" type="reset" >Reset</button> 
+        
+    </div>
+   
+    <br>
+</form>
+<br>
+<form  [formGroup]="entryGroup" (ngSubmit)="AddImage($event)" [hidden]="!showDiv" >
+
+    
+      
+    <mat-form-field appearance="fill">
+        <mat-label>Image Name</mat-label>
+        <input matInput type="text" [formControl]="nameCtrl">
+        <mat-error *ngIf="passwordCtrl.hasError('required')">Name is required</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>URL</mat-label>
+        <input matInput type="url" [formControl] = "urlCtrl">
+        <mat-error *ngIf="passwordCtrl.hasError('required')">Url is required</mat-error>
+    </mat-form-field>
+
+    <br>
+    <div id="ImageDiv" >
+
+        <img [src]="urlCtrl.value" alt="myUrl" width="250px" height="200px">
+    </div>
+    <br>
+
+    
+    <button mat-raised-button color="primary">Add</button> &nbsp;
+    <button mat-raised-button color="warn" (click)="logOut()">LogOut</button>
+
+
+</form>
+
+
+<form  (ngSubmit)="errorMethod($event)" [hidden]="!errorDiv" >
+
+    <h1 class="alert text-danger">Invalid User Name / Password</h1>
+
+        
+    <button mat-raised-button color="primary">Try Again</button> <br>
+
+</form>
+
+

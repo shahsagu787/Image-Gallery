@@ -1,0 +1,32 @@
+<mat-toolbar>
+  <button 
+    (click)="drawer.toggle()"
+    mat-icon-button 
+    class="example-icon" 
+    aria-label="Example icon-button with menu icon">
+   <mat-icon>menu</mat-icon>
+ </button>
+ <span>{{ title }}</span>
+</mat-toolbar>
+<mat-drawer-container class="example-container">
+  <mat-drawer #drawer mode="side" Clossed>
+    <mat-nav-list>
+      <a mat-list-item routerLink="entry" (click)="drawer.toggle()">Image Gallery</a>
+    </mat-nav-list>
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <a mat-list-item routerLink="Register" (click)="drawer.toggle()">Register User</a>
+    </mat-nav-list>
+    
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <a mat-list-item routerLink="Add" (click)="drawer.toggle()">Add Image</a>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    
+  <router-outlet (activate)="changeTitle($event.pageTitle)"></router-outlet>
+
+  </mat-drawer-content>
+</mat-drawer-container>

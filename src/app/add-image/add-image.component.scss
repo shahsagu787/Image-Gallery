@@ -1,0 +1,26 @@
+:host{
+    text-align: center;
+    padding: 1em;
+    display: block;
+    background-color: burlywood;
+    form{
+
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+        padding: 1em;
+        border: 4px solid black;
+        border-radius: 10px;
+      
+        background-color: lightyellow;
+       
+
+
+    }
+
+    form mat-form-field mat-label{
+        color:black;
+        font-size: large;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bolder;
+    }
+}

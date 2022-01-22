@@ -1,0 +1,34 @@
+:host{
+   
+    section{
+        background-color: burlywood;
+    }
+   
+    h2{
+        text-align: center;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: x-large;
+        color: burlywood;
+        background-color: black;
+    }
+    form{
+
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+        padding: 1em;
+        border: 4px solid black;
+        border-radius: 10px;
+        color: black;
+        background-color: lightyellow;
+       
+
+
+    }
+
+    form mat-form-field mat-label{
+        color:black;
+        font-size: large;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bolder;
+    }
+}

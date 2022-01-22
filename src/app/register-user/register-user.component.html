@@ -1,0 +1,51 @@
+<section>
+    <h2>Registration Form</h2>
+<form [formGroup]="entryGroup" (ngSubmit)="onSubmit($event)">
+
+    
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Sagar" [formControl] = "nameCtrl">
+        <mat-error *ngIf="nameCtrl.hasError('required')">Name is required</mat-error>
+        <mat-error *ngIf="nameCtrl.hasError('maxlength')">Name is too long</mat-error>
+        <mat-error *ngIf="nameCtrl.hasError('pattern')">Name must only contain alphabets</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="abc@xyz.com" [formControl] = "emailCtrl">
+        <mat-error *ngIf="emailCtrl.hasError('required')">Email is required</mat-error>
+        <mat-error *ngIf="emailCtrl.hasError('email')">Email is not in proper format</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Phone Number</mat-label>
+        <input matInput placeholder="999-888-7777" [formControl] = "phoneCtrl">
+        <mat-error *ngIf="phoneCtrl.hasError('required')">Phone number is required</mat-error>
+        <mat-error *ngIf="phoneCtrl.hasError('pattern')">Phone number must follow format</mat-error>
+    </mat-form-field>
+   <br>
+   <mat-form-field appearance="fill">
+        <mat-label>User Name</mat-label>
+        <input matInput [formControl] = "userNameCtrl">
+        <mat-error *ngIf="userNameCtrl.hasError('required')">User Name is required</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput [formControl] = "passwordCtrl">
+        <mat-error *ngIf="passwordCtrl.hasError('required')">Password is required</mat-error>
+        <mat-error *ngIf="passwordCtrl.hasError('maxlength')">Password is too long</mat-error>
+        <mat-error *ngIf="passwordCtrl.hasError('minlength')">Password is too short</mat-error>
+    </mat-form-field>
+    <div>
+
+        <button mat-raised-button color="primary" >Register</button> 
+        &nbsp;
+        <button mat-raised-button color="light" type="reset" >Reset</button> 
+        
+    </div>
+    
+</form>
+<h2 *ngIf="isUser">User Name is already used !! Try another</h2>
+</section>
